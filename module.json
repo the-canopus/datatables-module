@@ -1,0 +1,13 @@
+{
+    "name": "Datatables",
+    "alias": "datatables",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Modules\\Datatables\\Providers\\DatatablesServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

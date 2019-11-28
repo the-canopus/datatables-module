@@ -1,0 +1,30 @@
+{
+    "name": "the-canopus/datatables-module",
+    "type": "canopus-module",
+    "license": "MIT",
+    "description": "Canopus datatable module",
+    "authors": [
+        {
+            "name": "Soheil Rahmat",
+            "email": "soheilrt314@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Datatables\\Providers\\DatatablesServiceProvider"
+            ],
+            "aliases": {
+
+            }
+        },
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Datatables\\": ""
+        }
+    }
+}
