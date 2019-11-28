@@ -22,8 +22,7 @@
         },
         "branch-alias": {
             "dev-master": "1.0.x-dev"
-        },
-        "module-dir": "Datatables"
+        }
     },
     "autoload": {
         "psr-4": {
