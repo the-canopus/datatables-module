@@ -13,6 +13,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::prefix('datatables')->group(static function() {
-    Route::post('/{module}/{transformer}','DatatablesController');
+Route::prefix('datatables')->name('datatables.')->group(static function() {
+    Route::post('/{module}/{transformer}','DatatablesController')->name('get');
 });
