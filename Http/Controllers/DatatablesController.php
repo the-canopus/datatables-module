@@ -37,7 +37,7 @@ class DatatablesController extends Controller
     protected $module;
 
     /**
-     *  perform datatables response for datatables requests
+     *  perform datatable response for datatable requests
      *
      * @param  Request  $request
      * @param  mixed    $module
@@ -84,7 +84,7 @@ class DatatablesController extends Controller
      */
     protected function getTransformerClassFullName($module, $transformer)
     {
-        return "\\Modules\\".Str::camel($module)."\\Transformers\\".Str::camel($transformer.'Transformer');
+        return "\\Modules\\".Str::camel($module)."\\Transformers\\".Str::camel($transformer."Transformer");
     }
 
     /**
@@ -97,6 +97,7 @@ class DatatablesController extends Controller
         abort_unless(\request()->ajax(), Response::HTTP_METHOD_NOT_ALLOWED);
     }
 
+
     /**
      * qualify if module is present and enable before performing any process on request
      *
@@ -107,6 +108,7 @@ class DatatablesController extends Controller
         abort_unless($module = Module::find($this->module), Response::HTTP_NOT_FOUND);
         abort_unless($module->isEnabled(), Response::HTTP_BAD_REQUEST, "Module `$module` is Disabled!");
     }
+
 
     /**
      *qualify transformer is valid
