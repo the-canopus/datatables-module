@@ -57,7 +57,7 @@ class DatatablesController extends Controller
         $this->authorize();
 
 
-        return datatables()->setTransformer($this->getReflectionClass()->newInstance())->toJson();
+        return datatables($this->getQuery())->setTransformer($this->getReflectionClass()->newInstance())->toJson();
     }
 
     /**
@@ -150,5 +150,16 @@ class DatatablesController extends Controller
         if ($reflection->hasMethod('authorize')) {
             abort_unless($reflection->newInstanceWithoutConstructor()->authorize(), Response::HTTP_FORBIDDEN);
         }
+    }
+
+    /**
+     * return Query from transformer class
+     *
+     * @throws \ReflectionException
+     * @return \Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Query\Builder
+     */
+    protected function getQuery()
+    {
+        return $this->getReflectionClass()->newInstanceWithoutConstructor()->getQuery();
     }
 }
